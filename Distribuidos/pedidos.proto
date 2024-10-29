@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service Pedidos {
+  rpc RealizarPedido (PedidoRequest) returns (PedidoResponse);
+}
+
+message PedidoRequest {
+  string nombre_producto = 1;
+  float precio = 2;
+  string pasarela_pago = 3;
+  string marca_tarjeta = 4;
+  string banco = 5;
+  string region_envio = 6;
+  string direccion_envio = 7;
+  string email_cliente = 8;
+}
+
+message PedidoResponse {
+  string mensaje = 1;
+}
